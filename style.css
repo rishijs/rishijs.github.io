@@ -188,6 +188,12 @@ color: white;
     nav ul li:nth-child(n+3) {
         display: none;
     }
+    nav ul li:nth-child(6) {
+        display: block;
+    }
+    nav ul li:nth-child(7) {
+        display: block;
+    }
 }
 
 .controls {

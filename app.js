@@ -380,7 +380,7 @@ let outline_mat_s = new THREE.MeshBasicMaterial({
 let sphereGeometry = new THREE.SphereGeometry(8, 80, 80);
 let sphereMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
 export let sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
-sphere.position.set(0,jetY,800);
+sphere.position.set(300,jetY,800);
 let outlinePlayer = new THREE.Mesh(outline_geo_s, outline_mat_s);
 scene.add(sphere);
 sphere.add(outlinePlayer);

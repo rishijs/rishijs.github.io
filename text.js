@@ -42,7 +42,7 @@ export function drawText(){
             initialLoading = false;
 
             o1 = createText('RishiJSD Resume',
-                font,75,2,-500,0,400,-Math.PI/2,0,0,{ color: 0x483d8b });
+                font,75,2,-100,0,400,-Math.PI/2,0,0,{ color: 0x483d8b });
             o2 = createText('Website Updated Regularly \n Press spacebar -> jet \n Press ESC -> return to origin',
                 font,30,2,650,50,550,-Math.PI/3,0,0,{ color: 0xff0000 });
             o3 = createText('10 Crystals are located in essential \n parts of this resume. Each one grants \n  10% Increased Movement Speed.',

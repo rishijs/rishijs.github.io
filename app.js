@@ -387,10 +387,10 @@ sphere.add(outlinePlayer);
 
 //Geometry Random Decoration
 drawGeometry(45,45,0,0,0,1100,500,100);
-drawGeometry(10,10,0,0,-10000,1100,500,100);
-drawGeometry(10,10,4000,0,-12500,1100,500,100);
-drawGeometry(10,10,-5000,0,-15000,1100,500,100);
-drawGeometry(10,10,0,0,-17500,1100,500,100);
+drawGeometry(5,5,0,0,-10000,1100,500,100);
+drawGeometry(5,5,4000,0,-12500,1100,500,100);
+drawGeometry(5,5,-5000,0,-15000,1100,500,100);
+drawGeometry(5,5,0,0,-17500,1100,500,100);
 
 
 function handleCollision(){
@@ -684,7 +684,7 @@ function animate() {
                 sfx.play();
             }
             if(cameraMode == 0){
-                background.setVolume(0.27);
+                background.setVolume(0.15);
                 sfx.setVolume(0.03);
             }
             else{

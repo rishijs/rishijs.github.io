@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>RJSD Honorbound</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/pictures/Zenith.png">
+        <link href="https://fonts.cdnfonts.com/css/century-gothic" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../style.css">
+        <nav>
+            <ul>
+                <li><a href="../">Game</a></li>
+                <li><a href="/About/index.html">About</a></li>
+                <li><a href="/Fluxblade/index.html">Fluxblade</a></li>
+                <li><a href="/Honorbound/index.html">Honorbound</a></li>
+                <li><a href="/Misc/index.html">Misc</a></li>
+                <li><a href="#">Updates</a></li>
+                <li><a href="http://github.com/rj02sd" target="_blank">Github</a></li>
+            </ul>
+        </nav>
+    </head>
+
+    <div class="loadscreen" id="loading">
+        <img src="..\pictures\AspectSevadusk.png" alt="loading image">
+    </div>
+
+    <script>
+        setTimeout(function(){
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            document.getElementById("head-pic").style.display = "block"; 
+        },500)
+    </script>
+
+    <div type="module">
+        
+        <!--<script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+        !-->
+        <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/7/Stats.min.js" 
+        integrity="sha512-ey3wf3z1WUgQ6/XU/lV1UVQkbCpWsyQANkBst88XXWHok9fXKp55G365lLhScYihGpkzhiZz75r+8isUSCKRIg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script type="importmap">
+            {
+            "imports": {
+                "three": "https://unpkg.com/three@0.135.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.135.0/examples/jsm/"
+            }
+            }
+        </script>
+
+        <script type="module" src="app.js"></script>
+        
+    </div>
+
+
+    <body class="scroller">
+
+        <header id="header">
+            <h1>Updates</h1>
+            <img src="..\pictures\UpdatesPic.png" alt="pfp image" class="pfp" id="head-pic">
+        </header>
+
+        <div class="content" id="content">
+            <h1>Recent updates page</h1> 
+            <h1>4/14/23 - Base Website Launch on Github</h1>
+        </div>
+        
+    </body>
+
+</html>

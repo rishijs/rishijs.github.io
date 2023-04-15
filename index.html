@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>RJSD Showcase</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/pictures/Zenith.png">
+        <link href="https://fonts.cdnfonts.com/css/century-gothic" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <nav>
+            <ul>
+                <li><a href="#">Game</a></li>
+                <li><a href="/About/index.html">About</a></li>
+                <li><a href="/Fluxblade/index.html">Fluxblade</a></li>
+                <li><a href="/Honorbound/index.html">Honorbound</a></li>
+                <li><a href="/Misc/index.html">Misc</a></li>
+                <li><a a href="/Updates/index.html">Updates</a></li>
+                <li><a href="http://github.com/rj02sd" target="_blank">Github</a></li>
+            </ul>
+        </nav>
+    </head>
+
+    <div class="loadscreen" id="loading">
+        <img src="pictures\AspectSevadusk.png" alt="loading image">
+        <div class="loading-text" id="InfoText">Loading</div>
+        <div class="loading-bar" id="ProgressBar"></div>
+        <div class="loading-bar-progress" id="ProgressBarProgress"></div>
+        <div class="loading-text-bottom">If unable to view -> Check Other Tabs</div>
+    </div>
+
+    <body type="module">
+
+        <!--<script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+        !-->
+        <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/7/Stats.min.js" 
+        integrity="sha512-ey3wf3z1WUgQ6/XU/lV1UVQkbCpWsyQANkBst88XXWHok9fXKp55G365lLhScYihGpkzhiZz75r+8isUSCKRIg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script type="importmap">
+            {
+            "imports": {
+                "three": "https://unpkg.com/three@0.135.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.135.0/examples/jsm/"
+            }
+            }
+        </script>
+
+        <div class="controls" id="leftText">
+            WASD | SPACE | ESC | M
+        </div>
+
+        <div class="collected" id="rightText">
+            CRYSTALS | None
+        </div>
+     
+        <div id="intro"></div>
+        <div id="mutedText">Unmuted</div>
+        <div id="activeSong"></div>
+
+        <div class="mapM" id="mapM">
+            <div class="currentsquare" id="c1" style='display: none'>1</div>
+            <div class="emptysquare" id="m1" style='display: none'>1</div>
+            <div class="currentsquare" id="c2" style='display: none'>2</div>
+            <div class="emptysquare" id="m2" style='display: none'>2</div>
+            <div class="currentsquare" id="c3" style='display: none'>3</div>
+            <div class="emptysquare" id="m3" style='display: none'>3</div>
+            <div class="currentsquare" id="c4" style='display: none'>4</div>
+            <div class="emptysquare" id="m4" style='display: none'>4</div>
+        </div>
+
+        <div class="mapL" id="mapL">
+            <div class="currentsquareL" id="lc1" style='display: none'>Origin | Start</div>
+            <div class="emptysquareL" id="lm1" style='display: none'>Origin | Start</div>
+            <div class="currentsquareL" id="lc2" style='display: none'>Main | First Middle</div>
+            <div class="emptysquareL" id="lm2" style='display: none'>Main | First Middle</div>
+            <div class="currentsquareL" id="lc3" style='display: none'>Coursework | Right</div>
+            <div class="emptysquareL" id="lm3" style='display: none'>Coursework | Right</div>
+            <div class="currentsquareL" id="lc4" style='display: none'>Contact Info | Left</div>
+            <div class="emptysquareL" id="lm4" style='display: none'>Contact Info | Left</div>
+            <div class="currentsquareL" id="lc5" style='display: none'>Summary | Last Middle</div>
+            <div class="emptysquareL" id="lm5" style='display: none'>Summary | Last Middle</div>
+        </div>
+
+        <div class="gauge" id="ms">
+            
+        </div>
+
+        <div class="landing" id="stop">S</div>
+        
+        <button class="landb1" id="infob1"></button>
+        <p class="landp1" id="infop1"></p>
+
+        <button class="landb2" id="infob2"></button>
+        <p class="landp2" id="infop2"></p>
+
+        <button class="landb3" id="infob3"></button>
+        <p class="landp3" id="infop3"></p>
+
+        <script>
+            let b1 = document.getElementById("infob1");
+            let p1 = document.getElementById("infop1");
+
+            b1.addEventListener("click", function() {
+                if(p1.style.display == 'block'){
+                    p1.style.display = 'none';
+                }
+                else{
+                    p1.style.display = 'block';
+                }
+            });
+
+            let b2 = document.getElementById("infob2");
+            let p2 = document.getElementById("infop2");
+
+            b2.addEventListener("click", function() {
+                if(p2.style.display == "block"){
+                    p2.style.display = "none";
+                }
+                else{
+                    p2.style.display = "block";
+                }
+            });
+
+            let b3 = document.getElementById("infob3");
+            let p3 = document.getElementById("infop3");
+
+            b3.addEventListener("click", function() {
+                if(p3.style.display == "block"){
+                    p3.style.display = "none";
+                }
+                else{
+                    p3.style.display = "block";
+                }
+            });
+
+        </script>
+
+        <script type="module" src="app.js"></script>
+
+    </body>
+</html>

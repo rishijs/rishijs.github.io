@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Century Gothic', sans-serif;
+    background-color: black;
+}
+
+canvas {
+    position: fixed;
+    z-index: -10;
+}
+
+.scroller{
+    overflow-y: scroll;
+}
+header {
+    position: absolute;
+    color: #fff;
+    top:5%;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 20px;
+    opacity: 0.8;
+}
+
+.pfp{
+    position: absolute;
+    margin-top: 25px;
+    width:400px;
+    display:none;
+    left:50%;
+    height:200px;
+    opacity: 90%;
+    transform: translateX(-50%);
+    color: black;
+}
+
+h1 {
+    margin: 0;
+    font-size: 36px;
+    color:#CBC3E3;
+}
+
+.content {
+    position: absolute;
+    display:none;
+    top:65%;
+    width: 100%;
+    font-size: 20px;
+    line-height: 1.5;
+    color: white;
+    background-color: rgba(14, 14, 14, 0.5);
+}

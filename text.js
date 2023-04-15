@@ -44,11 +44,11 @@ export function drawText(){
             o1 = createText('RishiJSD Resume',
                 font,75,2,-500,0,400,-Math.PI/2,0,0,{ color: 0x483d8b });
             o2 = createText('Website Updated Regularly \n Press spacebar -> jet \n Press ESC -> return to origin',
-                font,30,2,-750,50,-850,-Math.PI/3,0,0,{ color: 0xff0000 });
-            o3 = createText('10 Crystals are located in essential parts of this resume \n Each one grants 10% \n Increased Movement Speed',
-                font,30,2,300,50,-850,-Math.PI/3,0,0,{ color: 0xFFFF00 });
+                font,30,2,650,50,550,-Math.PI/3,0,0,{ color: 0xff0000 });
+            o3 = createText('10 Crystals are located in essential \n parts of this resume. Each one grants \n  10% Increased Movement Speed.',
+                font,30,2,-650,50,550,-Math.PI/3,0,0,{ color: 0xFFFF00 });
             o4 = createText('         | Introduction | Expertise | Aspiration |   \n| GameDev | Projects |Music | Graphics | Design |',
-                font,20,2,-400,40,550,-Math.PI/4,0,0,{ color: 0x00FFFF });
+                font,20,2,0,40,550,-Math.PI/4,0,0,{ color: 0x00FFFF });
 
             scene.add(o1);
             scene.add(o2);

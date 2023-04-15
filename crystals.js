@@ -17,7 +17,7 @@ export function spawnCrystals(){
     //Crystal 1 - World 1
     loader.load( '/meshes/crystal.glb', function ( gltf ) {
         crystal1 = gltf.scene;
-        crystal1.position.set( 500,jetY-50,-650);
+        crystal1.position.set( -350,jetY-50, 700);
         crystal1.scale.set(crystralScale, crystralScale, crystralScale);
         scene.add(crystal1);
     }, undefined, function ( error ) {

@@ -35,10 +35,13 @@ export var cameraMode = 1;
 var landing = false;
 export var loading = true;
 export var lowres = false;
-var muted=false;
+var muted=true;
 var startMusic,initMusic=false;
 let listener,listener2,background,sfx;
 var progressBarWidth=300;
+var iBaseJetspeed = -12.5;
+var iBasePlayerSpeed = 5;
+var deltaMultiplier = 200;
 
 //scene set up
 export const scene = new THREE.Scene();
@@ -50,6 +53,7 @@ renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
+let clock = new THREE.Clock();
 
 //Loading
 export var manager = new THREE.LoadingManager();
@@ -509,11 +513,45 @@ drawMarkers();
 //Crystals
 spawnCrystals();
 
-
 function animate() {
 
     requestAnimationFrame(animate);
 
+    //Change MS based on framerate
+    var deltaTime=clock.getDelta();
+    var iJetspeed;
+    var iPlayerSpeed;
+
+    if(crystalsCollected==0){
+        baseJetspeed = -12.5*deltaTime*deltaMultiplier;
+        baseMoveSpeed = -iBaseJetspeed*0.4*deltaTime*deltaMultiplier*9/10;
+        basePlayerSpeed = 5*deltaTime*deltaMultiplier;
+        playerSpeed = Math.round(basePlayerSpeed * Math.pow(1.1,crystalsCollected));
+        moveSpeed = Math.round(baseMoveSpeed * Math.pow(1.1,crystalsCollected));
+        jetspeed = Math.round(baseJetspeed * Math.pow(1.1,crystalsCollected));
+        iPlayerSpeed = iBasePlayerSpeed;
+        iJetspeed = iBaseJetspeed;
+    
+    }
+
+    else if(crystalsCollected!=0){
+        baseJetspeed = -12.5*deltaTime*deltaMultiplier;
+        baseMoveSpeed = -iBaseJetspeed*0.4*deltaTime*deltaMultiplier*9/10;
+        basePlayerSpeed = 5*deltaTime*deltaMultiplier;
+        playerSpeed = Math.round(basePlayerSpeed * Math.pow(1.1,crystalsCollected));
+        moveSpeed = Math.round(baseMoveSpeed * Math.pow(1.1,crystalsCollected));
+        jetspeed = Math.round(baseJetspeed * Math.pow(1.1,crystalsCollected));
+        iPlayerSpeed = Math.round(iBasePlayerSpeed * Math.pow(1.1,crystalsCollected));
+        iJetspeed = Math.round(iBaseJetspeed * Math.pow(1.1,crystalsCollected));
+    }
+
+    if(cameraMode == 0){
+        document.getElementById("ms").textContent = -iJetspeed + " MS";
+    }
+    else if (cameraMode == 1){
+        document.getElementById("ms").textContent = iPlayerSpeed + " MS";
+    }
+    
     //Input [Jet]
     if(jet != null && loading==false && lowres==false){
         if(cameraMode == 0){
@@ -586,12 +624,6 @@ function animate() {
 
         } 
         
-        if(cameraMode == 0){
-            document.getElementById("ms").textContent = -jetspeed + " MS";
-        }
-        else if (cameraMode == 1){
-            document.getElementById("ms").textContent = playerSpeed + " MS";
-        }
 
         alertLanding();
         handleCollision();
@@ -701,13 +733,7 @@ function animate() {
             document.getElementById("mutedText").textContent = "Muted";
         }
 
-        //Crystal Handling
         crystalCollision();
-        if(crystalsCollected!=0){
-            playerSpeed = Math.round(basePlayerSpeed * Math.pow(1.1,crystalsCollected));
-            moveSpeed = Math.round(baseMoveSpeed * Math.pow(1.1,crystalsCollected));
-            jetspeed = Math.round(baseJetspeed * Math.pow(1.1,crystalsCollected));
-        }
 
         //World Config
         updateWorldMap();

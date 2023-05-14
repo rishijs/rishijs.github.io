@@ -52,6 +52,7 @@ if ( WebGPU.isAvailable() === false ) {
     document.body.appendChild( WebGPU.getErrorMessage() );
     throw new Error( 'No WebGPU support' );
 }
+console.log("WEB GPU ACTIVE");
 
 //scene set up
 export const scene = new THREE.Scene();

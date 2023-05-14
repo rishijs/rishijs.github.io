@@ -1,8 +1,4 @@
 import * as THREE from "three";
-
-import WebGPU from 'three/addons/capabilities/WebGPU.js';
-import WebGPURenderer from 'three/addons/renderers/webgpu/WebGPURenderer.js';
-
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
@@ -47,19 +43,12 @@ var iBaseJetspeed = -12.5;
 var iBasePlayerSpeed = 5;
 var deltaMultiplier = 200;
 
-//Webgpu
-if ( WebGPU.isAvailable() === false ) {
-    document.body.appendChild( WebGPU.getErrorMessage() );
-    throw new Error( 'No WebGPU support' );
-}
-console.log("WEB GPU ACTIVE");
-
 //scene set up
 export const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000);
 const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 5000);
 const cameratop = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 2000);
-export const renderer = new WebGPURenderer();
+export const renderer = new THREE.WebGLRenderer();
 renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);

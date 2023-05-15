@@ -6,10 +6,10 @@ import {scene} from "./app.js";
 export function drawLand(){
     const geometry = new THREE.BoxGeometry(2000, 60, 2000);
     let colorsland = [
-        new THREE.Color(0x1E6648).multiplyScalar(0.05),
-        new THREE.Color(0x197D31).multiplyScalar(0.1),
-        new THREE.Color(0x5FC66A).multiplyScalar(0.15),
-        new THREE.Color(0x008000).multiplyScalar(0.2)
+        new THREE.Color(0x1E6648).multiplyScalar(0.03),
+        new THREE.Color(0x197D31).multiplyScalar(0.06),
+        new THREE.Color(0x5FC66A).multiplyScalar(0.09),
+        new THREE.Color(0x008000).multiplyScalar(0.01)
     ];
     geometry.attributes.color = new THREE.BufferAttribute(new Float32Array(geometry.attributes.position.count * 3), 3);
     for (let i = 0; i < geometry.attributes.position.count; i++) {

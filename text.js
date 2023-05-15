@@ -36,7 +36,7 @@ export function drawText(){
 
 
     const loaderf = new FontLoader(manager);
-    loaderf.load('https://threejs.org/examples/fonts/gentilis_regular.typeface.json', function (font) {
+    loaderf.load('https://threejs.org/examples/fonts/optimer_bold.typeface.json', function (font) {
 
         if(initialLoading == true){
             initialLoading = false;
@@ -45,10 +45,10 @@ export function drawText(){
                 //font,75,2,-100,0,400,-Math.PI/2,0,0,{ color: 0x483d8b });
             //o2 = createText('Website Updated Regularly \n Press spacebar -> jet \n Press ESC -> return to origin',
                 //font,30,2,650,50,550,-Math.PI/3,0,0,{ color: 0xff0000 });
-            o3 = createText('10 Crystals are located in essential \n parts of this resume. Each one grants \n  10% Increased Movement Speed.',
-                font,30,2,-650,50,550,-Math.PI/3,0,0,{ color: 0xFFFF00 });
-            o4 = createText('         | Introduction | Expertise | Aspiration |   \n| GameDev | Projects |Music | Graphics | Design |',
-                font,20,2,0,40,550,-Math.PI/4,0,0,{ color: 0x00FFFF });
+            //o3 = createText('10 Crystals are located in essential \n parts of this resume. Each one grants \n  10% Increased Movement Speed.',
+                //font,30,2,-650,50,550,-Math.PI/3,0,0,{ color: 0xFFFF00 });
+            o4 = createText('          Introduction   Expertise   Aspiration    \n GameDev   Projects   Music   Graphics   Design',
+                font,20,2,-25,40,550,-Math.PI/4,0,0,{ color: 0x00FFFF });
 
             scene.add(o1);
             scene.add(o2);
@@ -56,13 +56,13 @@ export function drawText(){
             scene.add(o4);
 
             l1 = createText('FIRST MIDDLE',
-                font,200,25,-800,0,-10400,-Math.PI/4,0,0,{ color: 0xffffff });
+                font,200,25,-800,0,-10400,-Math.PI/4,0,0,{ color: 0x9F2305 });
             l2 = createText('RIGHT',
-                font,200,25,3200,0,-12900,-Math.PI/4,0,0,{ color: 0xffffff });
+                font,200,25,3200,0,-12900,-Math.PI/4,0,0,{ color: 0x9F2305 });
             l3 = createText('LEFT',
-                font,200,25,-5800,0,-15400,-Math.PI/4,0,0,{ color: 0xffffff });
+                font,200,25,-5800,0,-15400,-Math.PI/4,0,0,{ color: 0x9F2305 });
             l4 = createText('LAST MIDDLE',
-                font,200,25,-800,0,-17900,-Math.PI/4,0,0,{ color: 0xffffff });
+                font,200,25,-800,0,-17900,-Math.PI/4,0,0,{ color: 0x9F2305 });
 
             scene.add(l1);
             scene.add(l2);

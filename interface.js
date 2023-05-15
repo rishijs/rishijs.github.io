@@ -1,5 +1,8 @@
-import {world,cameraMode,landnum,loading,lowres} from "./app.js";
+import {world,cameraMode,landnum,loading,lowres, renderer, renderError} from "./app.js";
 import {crystalsCollected} from "./crystals.js";
+
+export var hideUI = true;
+export var tutorial = true;
 
 export var setworld0 = true;
 export var setworld1 = true;
@@ -26,19 +29,52 @@ export function resetTempWorlds(){
     }
 }
 
+export function skipTutorial(){
+    tutorial = false;
+}
+
 export function updateUI(){
-    if(lowres==true){
+    
+    if(tutorial == true){
+        document.getElementById("helpers").style.display = 'block';
+        document.getElementById("loading").style.display = 'block';
+        document.getElementById("indices").style.display = 'block';
+        document.getElementById("skipper").style.display = 'block';
+        document.getElementById("count").style.display = 'block';
+        tutorial = false;
+    }
+    else if(tutorial == false){
+        document.getElementById("helpers").style.display = 'none';
+        document.getElementById("indices").style.display = 'none';
+        document.getElementById("skipper").style.display = 'none';
+        document.getElementById("count").style.display = 'none';
+        hideUI = false;
+    }
+
+    if(lowres == true || renderError == true){
+        if(renderError == true){
+            document.getElementById("incompatible").style.display = 'block';
+            tutorial = true;
+        }
+        else if(lowres == true){
+            document.getElementById("overlayID").style.display = 'block';
+            setTimeout(function() {
+                setTimeout(function() {
+                    if(lowres == true){
+                        window.location.href = "/About/index.html";
+                    }
+                },1000);
+            }, 3000);
+        }
+
         document.getElementById("intro").style.display = 'none';
         document.getElementById("mutedText").style.display = 'none';
         document.getElementById("activeSong").style.display = 'none';
         document.getElementById("mapM").style.display = 'none';
         document.getElementById("mapL").style.display = 'none';
-        document.getElementById("leftText").style.display = 'none';
         document.getElementById("rightText").style.display = 'none';
         document.getElementById("ms").style.display = 'none';
-        document.getElementById("loading").style.display = 'block';
-        document.getElementById("InfoText").textContent = 'Screen Too Small';
-        document.getElementById("InfoText").style.fontSize = '30px';
+        document.getElementById("loading").style.display = 'none';
         document.getElementById("infob1").style.display = 'none';
         document.getElementById("infop1").style.display = 'none';
         document.getElementById("infob2").style.display = 'none';
@@ -46,54 +82,55 @@ export function updateUI(){
         document.getElementById("infob3").style.display = 'none';
         document.getElementById("infop3").style.display = 'none';
     }
-    else if(loading==false && lowres==false){
-        document.getElementById("intro").style.display = 'block';
-        document.getElementById("mutedText").style.display = 'block';
-        document.getElementById("mapM").style.display = 'block';
-        document.getElementById("mapL").style.display = 'block';
-        document.getElementById("leftText").style.display = 'inline-block';
-        document.getElementById("rightText").style.display = 'inline-block';
-        document.getElementById("ms").style.display = 'inline-block';
-        document.getElementById("loading").style.display = 'none';
-        document.getElementById("InfoText").style.textContent = 'Loading';
-        document.getElementById("InfoText").style.fontSize = '75px';
-        document.getElementById("infob1").style.display = 'block';
-        document.getElementById("infob2").style.display = 'block';
-        document.getElementById("infob3").style.display = 'block';
+    else if(loading==false && lowres==false && renderError == false && tutorial == false){
+        if(hideUI == false){
+            document.getElementById("intro").style.display = 'block';
+            document.getElementById("mutedText").style.display = 'block';
+            document.getElementById("mapM").style.display = 'block';
+            document.getElementById("mapL").style.display = 'block';
+            document.getElementById("rightText").style.display = 'inline-block';
+            document.getElementById("ms").style.display = 'inline-block';
+            document.getElementById("loading").style.display = 'none';
+            document.getElementById("infob1").style.display = 'block';
+            document.getElementById("infob2").style.display = 'block';
+            document.getElementById("infob3").style.display = 'block';
+            document.getElementById("overlayID").style.display = 'none';
+            document.getElementById("incompatible").style.display = 'none';
+        }
 
         switch (crystalsCollected){
             case 0:
-                document.getElementById("rightText").textContent = 'CRYSTALS | None';
+                document.getElementById("rightText").textContent = '';
                 break;
             case 1:
-                document.getElementById("rightText").textContent = 'CRYSTALS | *';
+                document.getElementById("rightText").textContent = '*';
                 break;
             case 2:
-                document.getElementById("rightText").textContent = 'CRYSTALS | **';
+                document.getElementById("rightText").textContent = '**';
                 break;
             case 3:
-                document.getElementById("rightText").textContent = 'CRYSTALS | ***';
+                document.getElementById("rightText").textContent = '***';
                 break;
             case 4:
-                document.getElementById("rightText").textContent = 'CRYSTALS | ****';
+                document.getElementById("rightText").textContent = '****';
                 break;
             case 5:  
-                document.getElementById("rightText").textContent = 'CRYSTALS | *****';
+                document.getElementById("rightText").textContent = '*****';
                 break;
             case 6:
-                document.getElementById("rightText").textContent = 'CRYSTALS | ******';
+                document.getElementById("rightText").textContent = '******';
                 break;
             case 7:
-                document.getElementById("rightText").textContent = 'CRYSTALS | *******';
+                document.getElementById("rightText").textContent = '*******';
                 break;
             case 8:
-                document.getElementById("rightText").textContent = 'CRYSTALS | ********';
+                document.getElementById("rightText").textContent = '********';
                 break;
             case 9:
-                document.getElementById("rightText").textContent = 'CRYSTALS | *********';
+                document.getElementById("rightText").textContent = '*********';
                 break;
             case 10:
-                document.getElementById("rightText").textContent = 'CRYSTALS | **********';
+                document.getElementById("rightText").textContent = '**********';
                 break;
         }
 

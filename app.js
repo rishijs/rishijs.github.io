@@ -8,7 +8,7 @@ import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'
 import {startInit} from "./init.js";
 import {initParticles, updateParticles, resetParticles} from "./particles.js";
 import {renderLayout} from "./layout.js";
-import {updateLandMap, updateWorldMap, updateUI, resetTempWorlds} from "./interface.js";
+import {updateLandMap, updateWorldMap, updateUI, resetTempWorlds, tutorial} from "./interface.js";
 import {drawGeometry} from "./arrangeGeometry.js";
 import {drawLand} from "./islands.js";
 import {drawMarkers} from "./markers.js";
@@ -38,17 +38,25 @@ export var lowres = false;
 var muted=true;
 var startMusic,initMusic=false;
 let listener,listener2,background,sfx;
-var progressBarWidth=300;
+var progressBarWidth=100;
 var iBaseJetspeed = -12.5;
 var iBasePlayerSpeed = 5;
 var deltaMultiplier = 200;
+export var renderError = false;
 
 //scene set up
 export const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000);
 const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 5000);
 const cameratop = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 2000);
-export const renderer = new THREE.WebGLRenderer();
+export let renderer;
+try{
+    renderer = new THREE.WebGLRenderer();
+}
+catch(error){
+    console.log(error);
+    renderError = true;
+}
 renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
@@ -61,9 +69,23 @@ manager.onProgress = function (url, itemsLoaded, itemsTotal) {
     var progress = itemsLoaded / itemsTotal;
     document.getElementById("ProgressBarProgress").style.width = progress * progressBarWidth + 'px';
 };
-manager.onLoad = function () {
-    loading=false;
-};
+var countdown = 20;
+
+export function setCountdownZero(){
+    countdown = 1;
+}
+
+if(countdown>0){
+    document.getElementById("count").textContent = countdown+'';
+    let intervalId = setInterval(function(){
+        if (countdown > 0) {
+            document.getElementById("count").textContent = countdown + '';
+            countdown -= 1;
+        } else {
+            clearInterval(intervalId);
+        }
+    },1000)
+}
 
 //post process
 const renderScene = new RenderPass( scene, camera );
@@ -308,7 +330,7 @@ function keyInput(event) {
             stopMovement();
             landnum = 0;
             cameraMode = 1;
-            sphere.position.set(-150,jetY,800);
+            sphere.position.set(0,jetY,800);
             jet.position.set( pX, jetFloorY, -700 );
             jet.rotation.set(0,0,0);
             jet.scale.set(40,30,40);
@@ -391,10 +413,10 @@ sphere.add(outlinePlayer);
 
 //Geometry Random Decoration
 drawGeometry(45,45,0,0,0,1100,500,100);
-drawGeometry(5,5,0,0,-10000,1100,500,100);
-drawGeometry(5,5,4000,0,-12500,1100,500,100);
-drawGeometry(5,5,-5000,0,-15000,1100,500,100);
-drawGeometry(5,5,0,0,-17500,1100,500,100);
+drawGeometry(2,3,0,0,-10000,1100,500,100);
+drawGeometry(3,2,4000,0,-12500,1100,500,100);
+drawGeometry(2,3,-5000,0,-15000,1100,500,100);
+drawGeometry(3,2,0,0,-17500,1100,500,100);
 
 
 function handleCollision(){
@@ -516,6 +538,10 @@ spawnCrystals();
 function animate() {
 
     requestAnimationFrame(animate);
+
+    if(countdown == 0){
+        loading = false;
+    }
 
     //Change MS based on framerate
     var deltaTime=clock.getDelta();
@@ -774,5 +800,6 @@ function onWindowResize() {
     cameratop.aspect = window.innerWidth / window.innerHeight;
     cameratop.updateProjectionMatrix();
     renderer.setSize( window.innerWidth, window.innerHeight );
+
     return false;
 }

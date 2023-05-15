@@ -98,7 +98,7 @@ export function renderLayout(){
                 skyUniforms[ 'turbidity' ].value += -1.5 / 10;
             }
             else if(skyUniforms[ 'turbidity' ].value <= 20){
-                skyUniforms[ 'turbidity' ].value += -0.25 / 10;
+                skyUniforms[ 'turbidity' ].value += -0.5 / 10;
             }
         }
     }

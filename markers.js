@@ -3,7 +3,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 import {scene,manager,endOfWorld} from "./app.js";
 
-var markerCount = 20;
+var markerCount = 10;
 
 export function drawMarkers(){
 
@@ -11,8 +11,8 @@ export function drawMarkers(){
     for (let i=2; i<markerCount; i++){
         loader.load( '/meshes/marker.glb', function ( gltf ) {
             let marker = gltf.scene;
-            marker.scale.set( 10, 10, 10);
-            marker.position.set(i*((Math.random() * 10)+(-1*endOfWorld/markerCount/3.3)),-25,-i*(-1*endOfWorld/markerCount));
+            marker.scale.set( 80, 80, 80);
+            marker.position.set(i*((Math.random() * 10)+(-1*endOfWorld/markerCount/3.3)),-80,-i*(-1*endOfWorld/markerCount));
             marker.rotation.set((Math.random() * 2)-1,(Math.random() * 2)-1,(Math.random() * 2)-1);
     
             let outline_geo = new THREE.IcosahedronGeometry(1+0.1, 1);
@@ -28,8 +28,8 @@ export function drawMarkers(){
         } );
         loader.load( '/meshes/marker.glb', function ( gltf ) {
             let marker = gltf.scene;
-            marker.scale.set( 10, 10, 10);
-            marker.position.set(-i*((Math.random() * 10)+(-1*endOfWorld/markerCount/3.3)),-25,-i*(-1*endOfWorld/markerCount));
+            marker.scale.set( 80, 80, 80);
+            marker.position.set(-i*((Math.random() * 10)+(-1*endOfWorld/markerCount/3.3)),-80,-i*(-1*endOfWorld/markerCount));
             marker.rotation.set((Math.random() * 2)-1,(Math.random() * 2)-1,(Math.random() * 2)-1);
     
             let outline_geo = new THREE.IcosahedronGeometry(1+0.1, 1);
@@ -45,8 +45,8 @@ export function drawMarkers(){
         } );
         loader.load( '/meshes/marker.glb', function ( gltf ) {
             let marker = gltf.scene;
-            marker.scale.set( 10, 10, 10);
-            marker.position.set((Math.random() * 30)-15,-25,-i*(-1*endOfWorld/markerCount));
+            marker.scale.set( 80, 80, 80);
+            marker.position.set((Math.random() * 30)-15,-80,-i*(-1*endOfWorld/markerCount));
             marker.rotation.set((Math.random() * 2)-1,(Math.random() * 2)-1,(Math.random() * 2)-1);
             
             let outline_geo = new THREE.IcosahedronGeometry(1+0.1, 1);

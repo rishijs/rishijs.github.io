@@ -48,7 +48,7 @@ export function drawText(){
             //o3 = createText('10 Crystals are located in essential \n parts of this resume. Each one grants \n  10% Increased Movement Speed.',
                 //font,30,2,-650,50,550,-Math.PI/3,0,0,{ color: 0xFFFF00 });
             o4 = createText('          Introduction   Expertise   Aspiration    \n GameDev   Projects   Music   Graphics   Design',
-                font,20,2,-25,40,550,-Math.PI/4,0,0,{ color: 0x00FFFF });
+                font,20,1,-25,40,650,-Math.PI/2,0,0,{ color: 0x00FFFF });
 
             scene.add(o1);
             scene.add(o2);

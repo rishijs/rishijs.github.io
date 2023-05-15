@@ -38,8 +38,17 @@ header {
 
 h1 {
     margin: 0;
-    font-size: 36px;
+    font-size: 24px;
     color:#CBC3E3;
+    align-content: left;
+    justify-content: left;
+}
+
+.updates {
+    margin-left: 35%;
+    font-size: 14px;
+    color:#CBC3E3;
+    text-align: left;
 }
 
 .content {
@@ -52,3 +61,4 @@ h1 {
     color: white;
     background-color: rgba(14, 14, 14, 0.5);
 }
+

@@ -2,7 +2,6 @@ import * as THREE from "three";
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 
 import {startInit} from "./init.js";
@@ -88,7 +87,6 @@ if(countdown>0){
 }
 
 //post process
-const renderScene = new RenderPass( scene, camera );
 const bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
 let composer = new EffectComposer( renderer );
 
@@ -97,7 +95,6 @@ bloomPass.threshold = 0.5;
 bloomPass.strength = 100;
 bloomPass.radius = 1000;
 
-composer.addPass( renderScene );
 composer.addPass( bloomPass );
 
 //stats

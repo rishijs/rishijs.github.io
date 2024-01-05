@@ -2,279 +2,114 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>RJSD Showcase</title>
+        <title>RJSD Fluxblade</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/pictures/Zenith.png">
         <link href="https://fonts.cdnfonts.com/css/century-gothic" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <nav>
             <ul>
-                <li><a href="#">Game</a></li>
-                <li><a href="/About/index.html">About</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="/Explore/index.html">Explore</a></li>
                 <li><a href="/Fluxblade/index.html">Fluxblade</a></li>
                 <li><a href="/Honorbound/index.html">Honorbound</a></li>
                 <li><a href="/Misc/index.html">Misc</a></li>
-                <li><a a href="/Updates/index.html">Updates</a></li>
+                <li><a href="/Updates/index.html">Updates</a></li>
                 <li><a href="http://github.com/rj02sd" target="_blank">Github</a></li>
             </ul>
         </nav>
     </head>
 
-    <div class="slideshow-container" id="helpers">
-
-        <div class="mySlides fade">
-        <div class="numbertext">Crystals</div>
-        <img src="/pictures/helper1.png" style="width:100%">
-        <div class="text">Collect Crystals to Enhance Speed</div>
-        </div>
-    
-        <div class="mySlides fade">
-        <div class="numbertext">Landing</div>
-        <img src="/pictures/helper2.png" style="width:100%">
-        <div class="text">Press S Key to Land</div>
-        </div>
-    
-        <div class="mySlides fade">
-        <div class="numbertext">Info</div>
-        <img src="/pictures/helper3.png" style="width:100%">
-        <div class="text">Land to Read More</div>
-        </div>
-
-        <div class="mySlides fade">
-        <div class="numbertext">Movement</div>
-        <img src="/pictures/helper4.png" style="width:100%">
-        <div class="text">Use WASD to Move</div>
-        </div>
-
-        <div class="mySlides fade">
-        <div class="numbertext">More Controls</div>
-        <img src="/pictures/helper6.png" style="width:100%">
-        <div class="text">Esc to Restart, M to Play Music</div>
-        </div>
-
-        <div class="mySlides fade">
-        <div class="numbertext">Ready?</div>
-        <img src="/pictures/helper5.png" style="width:100%">
-        <div class="text">Press Spacebar to Take Off</div>
-        </div>
-    </div>
-
-    <div class="errortxt" id="incompatible">WEBGL Error On Your Device</div>
-    <div class="countdown" id="count"">∞</div>
-
-    <div style="text-align:center" id="indices">
-        <span class="slideBox" id="s1"></span>
-        <span class="slideBox" id="s2"></span>
-        <span class="slideBox" id="s3"></span>
-        <span class="slideBox" id="s4"></span>
-        <span class="slideBox" id="s5"></span>
-        <span class="slideBox" id="s6"></span>
-    </div>
-
     <script>
-        let slideIndex = 0;
-
-        showSlides();
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1
-            }
-            slides[slideIndex-1].style.display = "block";
-            highlight(slideIndex);
-            setTimeout(showSlides, 3000);
-        }
-
-        function highlight(n) {
-            switch(n){
-                case 1:
-                    document.getElementById("s1").style.backgroundColor="#191970";
-                    document.getElementById("s2").style.backgroundColor="#151515";
-                    document.getElementById("s3").style.backgroundColor="#151515";
-                    document.getElementById("s4").style.backgroundColor="#151515";
-                    document.getElementById("s5").style.backgroundColor="#151515";
-                    document.getElementById("s6").style.backgroundColor="#151515";
-                    break;
-                case 2:
-                    document.getElementById("s2").style.backgroundColor="#191970";
-                    document.getElementById("s1").style.backgroundColor="#151515";
-                    document.getElementById("s3").style.backgroundColor="#151515";
-                    document.getElementById("s4").style.backgroundColor="#151515";
-                    document.getElementById("s5").style.backgroundColor="#151515";
-                    document.getElementById("s6").style.backgroundColor="#151515";
-                    break;
-                case 3:
-                    document.getElementById("s3").style.backgroundColor="#191970";
-                    document.getElementById("s2").style.backgroundColor="#151515";
-                    document.getElementById("s1").style.backgroundColor="#151515";
-                    document.getElementById("s4").style.backgroundColor="#151515";
-                    document.getElementById("s5").style.backgroundColor="#151515";
-                    document.getElementById("s6").style.backgroundColor="#151515";
-                    break;
-                case 4:
-                    document.getElementById("s4").style.backgroundColor="#191970";
-                    document.getElementById("s2").style.backgroundColor="#151515";
-                    document.getElementById("s3").style.backgroundColor="#151515";
-                    document.getElementById("s1").style.backgroundColor="#151515";
-                    document.getElementById("s5").style.backgroundColor="#151515";
-                    document.getElementById("s6").style.backgroundColor="#151515";
-                    break;
-                case 5:
-                    document.getElementById("s5").style.backgroundColor="#191970";
-                    document.getElementById("s2").style.backgroundColor="#151515";
-                    document.getElementById("s3").style.backgroundColor="#151515";
-                    document.getElementById("s4").style.backgroundColor="#151515";
-                    document.getElementById("s1").style.backgroundColor="#151515";
-                    document.getElementById("s6").style.backgroundColor="#151515";
-                    break;  
-                case 6:
-                    document.getElementById("s5").style.backgroundColor="#151515";
-                    document.getElementById("s2").style.backgroundColor="#151515";
-                    document.getElementById("s3").style.backgroundColor="#151515";
-                    document.getElementById("s4").style.backgroundColor="#151515";
-                    document.getElementById("s1").style.backgroundColor="#151515";
-                    document.getElementById("s6").style.backgroundColor="#191970";
-                    break;  
-            }  
-        }
+        setTimeout(function(){
+            document.getElementById("content").style.display = "block";
+            document.getElementById("head-pic").style.display = "block";
+        },500)
     </script>
 
-    <div class="overlay" id="overlayID">Window Too Small, Will Redirect Soon</div>
-
-    <div class="loadingbar" id="loading">
-        <div class="loading-bar" id="ProgressBar"></div>
-        <div class="loading-bar-progress" id="ProgressBarProgress"></div>
-    </div>
-
-    <body type="module">
+    <div type="module">
         
+        <!--<script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+        !-->
         <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/7/Stats.min.js" 
         integrity="sha512-ey3wf3z1WUgQ6/XU/lV1UVQkbCpWsyQANkBst88XXWHok9fXKp55G365lLhScYihGpkzhiZz75r+8isUSCKRIg==" 
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script type="importmap">
-            {
-            "imports": {
-                "three": "https://unpkg.com/three@0.135.0/build/three.module.js",
-                "three/addons/": "https://unpkg.com/three@0.135.0/examples/jsm/"
-            }
-            }
-        </script>
-
-        <div class="collected" id="rightText">
-        </div>
-     
-        <div id="intro"></div>
-        <div id="mutedText">Unmuted</div>
-        <div id="activeSong"></div>
-
-        <div class="mapM" id="mapM">
-            <div class="currentsquare" id="c1" style='display: none'>1</div>
-            <div class="emptysquare" id="m1" style='display: none'>1</div>
-            <div class="currentsquare" id="c2" style='display: none'>2</div>
-            <div class="emptysquare" id="m2" style='display: none'>2</div>
-            <div class="currentsquare" id="c3" style='display: none'>3</div>
-            <div class="emptysquare" id="m3" style='display: none'>3</div>
-            <div class="currentsquare" id="c4" style='display: none'>4</div>
-            <div class="emptysquare" id="m4" style='display: none'>4</div>
-        </div>
-
-        <div class="mapL" id="mapL">
-            <div class="currentsquareL" id="lc1" style='display: none'>Origin | Start</div>
-            <div class="emptysquareL" id="lm1" style='display: none'>Origin | Start</div>
-            <div class="currentsquareL" id="lc2" style='display: none'>Main | First Middle</div>
-            <div class="emptysquareL" id="lm2" style='display: none'>Main | First Middle</div>
-            <div class="currentsquareL" id="lc3" style='display: none'>Coursework | Right</div>
-            <div class="emptysquareL" id="lm3" style='display: none'>Coursework | Right</div>
-            <div class="currentsquareL" id="lc4" style='display: none'>Contact Info | Left</div>
-            <div class="emptysquareL" id="lm4" style='display: none'>Contact Info | Left</div>
-            <div class="currentsquareL" id="lc5" style='display: none'>Summary | Last Middle</div>
-            <div class="emptysquareL" id="lm5" style='display: none'>Summary | Last Middle</div>
-        </div>
-
-        <div class="gauge" id="ms">
-        </div>
-
-        <button class="skipb" id="skipper">SKIP</button>
-
-        <div class="landing" id="stop">S</div>
-        <button class="landb1" id="infob1"></button>
-        <p class="landp1" id="infop1"></p>
-        <button class="landb2" id="infob2"></button>
-        <p class="landp2" id="infop2"></p>
-        <button class="landb3" id="infob3"></button>
-        <p class="landp3" id="infop3"></p>
-
-        <script type="module">
-            import {skipTutorial} from "./interface.js";
-            import {setCountdownZero} from "./app.js";
-
-            var countdown = 20;
-            if(countdown>0){
-                document.getElementById("count").textContent = countdown+'';
-                let intervalId = setInterval(function(){
-                    if (countdown > 0) {
-                        document.getElementById("count").textContent = countdown + '';
-                        countdown -= 1;
-                    } else {
-                        clearInterval(intervalId);
-                    }
-                },1000)
-            }
-
-            let skipb = document.getElementById("skipper");
-
-            skipb.addEventListener("click", function() {
-                countdown = 1;
-                skipTutorial();
-                setCountdownZero();
-
-            });
-
-            let b1 = document.getElementById("infob1");
-            let p1 = document.getElementById("infop1");
-
-            b1.addEventListener("click", function() {
-                if(p1.style.display == 'block'){
-                    p1.style.display = 'none';
-                }
-                else{
-                    p1.style.display = 'block';
-                }
-            });
-
-            let b2 = document.getElementById("infob2");
-            let p2 = document.getElementById("infop2");
-
-            b2.addEventListener("click", function() {
-                if(p2.style.display == "block"){
-                    p2.style.display = "none";
-                }
-                else{
-                    p2.style.display = "block";
-                }
-            });
-
-            let b3 = document.getElementById("infob3");
-            let p3 = document.getElementById("infop3");
-
-            b3.addEventListener("click", function() {
-                if(p3.style.display == "block"){
-                    p3.style.display = "none";
-                }
-                else{
-                    p3.style.display = "block";
-                }
-            });
-
-        </script>
 
         <script type="module" src="app.js"></script>
+        
+    </div>
+
+    <body class="scroller">
+
+        <header id="header">
+            <h1>Rishi Jammalamadaka</h1>
+            <img src="..\pictures\PfpProto.png" alt="pfp image" class="pfp" id="head-pic">
+        </header>
+        
+        <a class="resume" href="/files/RishiJ_Resume_Redacted.pdf" download="RJSD_Resume">DOWNLOAD RESUME</a>
+
+        <div class="box-container">
+            <div class="content" id="content">
+                <div class="box">
+                    <h1>Majoring in B.S. Computer Science at Rutgers New Brunswick</h1>
+                    <p>Planned Graduation by January 2024 - Junior - I have passed all the core classes required for the CS Major 
+                        - taking electives.</p>
+                </div>
+    
+                <div class="box">
+                    <h1>Related Coursework</h1>
+                    <p>Data Structures • Introduction to Artificial Intelligence
+                        Computer Architecture • Systems Programming • Design and Analysis of Computer Algorithms • 
+                        Calculus I • Calculus II • Introduction to Linear Algebra • Discrete I • Discrete II • 
+                        Numerical Analysis • General Physics 1 • General Physics 2</p>
+                </div>
+    
+                <div class="box">
+                    <h1>Experience</h1>
+                    <p>I have volunteered for 160+ hours at places including the local public library. 
+                    I tutored students in Math and Computer Science (mostly 1 on 1).
+                    I have attended 5+ Hackathons and refined my skills as a developer. </p>
+                </div>
+
+                <div class="box">
+                    <h1>Personal Projects</h1>
+                    <p>Fire Navigator --- July 2022 - Creating AI Agents that navigate through a blocked maze in
+                    Python - Used Jupyter Notebooks - Set up meetings daily to keep up to date on project development.</p>
+                    <p>Console Spot --- May 2022 - Database Project, Uses SQL, JDBC - Sell (artificial) consoles using
+                    SQL fundamentals, HTML, and minimalistic CSS design</p>
+                    <p>JSON Parse --- March 2019 - Independently made - Custom Website - Website Parses JSON Data - Uses
+                    Chart.js library</p>
+                </div>
+
+                <div class="box">
+                    <h1>Games</h1>
+                    <p>Fluxblade ----- This is an FPS survival rpg game, the player has 5 different weapons, each a different color, 
+                    the goal is to chain the weapons
+                    projectiles (flux). The flux is chained through nodes that the player can place around the map, 
+                    these nodes are bipartite (graph theory), and the flux tracks and eliminates the enemies.
+                    Check the Fluxblade tab for more info.</p>
+                    <P>Honorbound ----- I am currently working on this game, and I have released multiple, small, showcase videos and a demo.
+                    Check the Honorbound tab for more info.</P>
+                    <P>This website ----- I learned three.js/javacsript and finished this website in around 2 weeks.</P>
+                </div>
+
+                <div class="box">
+                    <h1>Areas of Expertise</h1>
+                    <p>C • C# • C++ • Python • Blueprint/Scripts • Java • HTML • JSON • JS • OCAML • JDBC • MySQL • LaTeX • JavaScript</p>
+                    <p>Unreal Engine • Unity • Three.js • Android Studios • PhotoShop • Other |∞|</p>
+                </div>
+
+                <div class="box">
+                    <h1>Aspirations</h1>
+                    <p>I love making games and have been designing them on the side. Working on these projects makes me want to merge my passion and work.
+                    I hope that, by getting into the design | development industry, I can share my vision with others.</p>
+                    <p>I also make music and do graphic design, some of my work will be embedded in this website soon.</p>
+                </div>
+            </div>
+        </div>
 
     </body>
+
 </html>

@@ -41,14 +41,29 @@
         
     </div>
 
+    <script>
+        document.addEventListener('scroll', function() {
+            const scrollY = window.scrollY;
+            const translateY = scrollY * 0.5;
+            document.getElementById('animatedImage').style.transform = `translateY(${translateY}px)`;
+        });
+    </script>
+
     <body class="scroller">
+        <div class="overlay-container">
+            <img src="/pictures/backgrounds/overlayGoldLines.png" alt="Overlay Image 1" class="overlay-image-1" id="animatedImage">
+            <img src="/pictures/backgrounds/overlayBlackMountains.png" alt="Overlay Image 2" class="overlay-image-2">
+            <img src="/pictures/backgrounds/overlayFog.png" alt="Overlay Image 3" class="overlay-image-3">
+        </div>
 
         <div class="box-container">
             <div id="header" class="box" style="text-align: center; margin-top: 20px;">
                 <h2>WELCOME</h2>
             </div>
-            <div>
-                <img src="..\pictures\PfpProto.png" alt="pfp image" class="pfp" id="head-pic">
+            <div class="headerimg-container">
+                <img src="\pictures\PfpProto.png" class="headerimg">
+                <img src="\pictures\AspectSevadusk.png" class="headerimg">
+                <img src="\pictures\gameShowcase (2).png" class="headerimg">
             </div>
             <div class="button-container" style="text-align: center;">
                 <a class="resume" href="/files/RishiJ_Resume_Redacted.pdf" download="RJSD_Resume">DOWNLOAD RESUME</a>

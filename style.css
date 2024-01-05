@@ -3,6 +3,7 @@ body {
     overflow: hidden;
     background-color:black;
     font-family: 'Century Gothic', sans-serif;
+    background-image: url("/pictures/backgrounds/mountains.jpeg");
 }
 
 .box {
@@ -78,6 +79,12 @@ header {
     opacity: 90%;
     transform: translateX(-50%);
     color: black;
+}
+
+h2 {
+    margin: 0;
+    font-size: 50px;
+    color:black;
 }
 
 h1 {

@@ -61,7 +61,7 @@ export function updateUI(){
             setTimeout(function() {
                 setTimeout(function() {
                     if(lowres == true){
-                        window.location.href = "/About/index.html";
+                        window.location.href = "../";
                     }
                 },1000);
             }, 3000);

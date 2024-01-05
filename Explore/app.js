@@ -1,9 +1,5 @@
 import * as THREE from "three";
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-
-import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
-import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
-
 import {startInit} from "./init.js";
 import {initParticles, updateParticles, resetParticles} from "./particles.js";
 import {renderLayout} from "./layout.js";
@@ -87,15 +83,7 @@ if(countdown>0){
 }
 
 //post process
-const bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
-let composer = new EffectComposer( renderer );
-
 renderer.toneMappingExposure = Math.pow( 0.95 , 4.0 );
-bloomPass.threshold = 0.5;
-bloomPass.strength = 100;
-bloomPass.radius = 1000;
-
-composer.addPass( bloomPass );
 
 //stats
 startInit();

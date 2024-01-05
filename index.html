@@ -7,19 +7,137 @@
         <link rel="icon" href="/pictures/Zenith.png">
         <link href="https://fonts.cdnfonts.com/css/century-gothic" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="/Explore/index.html">Explore</a></li>
-                <li><a href="/Games/index.html">Games</a>
-                <li><a href="/MusicCompositions/index.html">Music</a></li>
-                <li><a href="/PersonalProjects/index.html">Projects</a></li>
+                <li><a href="/Fluxblade/index.html">Fluxblade</a></li>
+                <li><a href="/Honorbound/index.html">Honorbound</a></li>
+                <li><a href="/Misc/index.html">Misc</a></li>
+                <li><a href="/Updates/index.html">Updates</a></li>
+                <li><a href="http://github.com/rj02sd" target="_blank">Github</a></li>
             </ul>
         </nav>
+
     </head>
-    <body>
-        <p>
-            Placeholder Home
-        </p>
+
+    <script>
+        setTimeout(function(){
+            document.getElementById("content").style.display = "block";
+            document.getElementById("head-pic").style.display = "block";
+        },500)
+    </script>
+
+    <div type="module">
+        <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/7/Stats.min.js" 
+        integrity="sha512-ey3wf3z1WUgQ6/XU/lV1UVQkbCpWsyQANkBst88XXWHok9fXKp55G365lLhScYihGpkzhiZz75r+8isUSCKRIg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script type="module" src="app.js"></script>
+        
+    </div>
+
+    <script>
+        document.addEventListener('scroll', function() {
+            const scrollY = window.scrollY;
+            const translateY = scrollY * 0.5;
+            document.getElementById('animatedImage').style.transform = `translateY(${translateY}px)`;
+        });
+    </script>
+
+    <body class="scroller">
+        
+        <div class="overlay-container">
+            <img src="/pictures/backgrounds/overlayGoldLines.png" alt="Overlay Image 1" class="overlay-image-1" id="animatedImage">
+            <img src="/pictures/backgrounds/overlayBlackMountains.png" alt="Overlay Image 2" class="overlay-image-2">
+            <img src="/pictures/backgrounds/overlayFog.png" alt="Overlay Image 3" class="overlay-image-3">
+        </div>
+
+        <div class="box-container">
+            <div id="header" class="box" style="text-align: center; margin-top: 20px;">
+                <h2>WELCOME</h2>
+            </div>
+            <div class="headerimg-container">
+                <img src="\pictures\PfpProto.png" class="headerimg">
+                <img src="\pictures\AspectSevadusk.png" class="headerimg">
+                <img src="\pictures\gameShowcase (2).png" class="headerimg">
+            </div>
+            <div class="button-container" style="text-align: center;">
+                <a class="resume" href="/files/RishiJ_Resume_Redacted.pdf" download="RJSD_Resume">DOWNLOAD RESUME</a>
+            </div>
+        </div>
+        
+
+        <div class="box-container">
+            <div class="content" id="content">
+
+                <div class="box">
+                    <h1>This Site is Under Construction!</h1>
+                    <p>Planning to make incremental revamps</p>
+                    <p>Be sure to check out a 3D Web Game in Explore!</p>
+                    <p>Some cards in "Explore" may be out of date</p>
+                </div>
+
+                <div class="box">
+                    <h1>Education</h1>
+                    <p>Rutgers University New Brunswick - Graduated January 2024</p>
+                </div>
+    
+                <div class="box">
+                    <h1>Related Coursework</h1>
+                    <p>Data Structures • Artificial Intelligence
+                        Computer Architecture • Systems Programming • Computer Algorithms • 
+                        Calculus • Linear Algebra • Discrete Math • 
+                        Numerical Analysis • General Physics • Imaging and Multimedia • Data Management and Data Science</p>
+                </div>
+    
+                <div class="box">
+                    <h1>Relevant Experience</h1>
+                    <p>I have volunteered for 160+ Hours, tutored in STEM, and attended 5+ Hackathons to refine my skills as a developer. </p>
+                    <p>I have also worked on massive games with small indie teams, will be updating on this soon</p>
+                </div>
+
+                <div class="box">
+                    <h1>Personal Projects</h1>
+                    <p>Fire Navigator --- July 2022 - Creating AI Agents that navigate through a blocked maze in
+                    Python - Used Jupyter Notebooks - Set up meetings daily to keep up to date on project development.</p>
+                    <p>Console Spot --- May 2022 - Database Project, Uses SQL, JDBC - Sell (artificial) consoles using
+                    SQL fundamentals, HTML, and minimalistic CSS design</p>
+                    <p>JSON Parse --- March 2019 - Independently made - Custom Website - Website Parses JSON Data - Uses
+                    Chart.js library</p>
+                    <p>more will also be added</p>
+                </div>
+
+                <div class="box">
+                    <h1>Games</h1>
+                    <p>Fluxblade ----- This is an FPS survival rpg game, the player has 5 different weapons, each a different color, 
+                    the goal is to chain the weapons
+                    projectiles (flux). The flux is chained through nodes that the player can place around the map, 
+                    these nodes are bipartite (graph theory), and the flux tracks and eliminates the enemies.
+                    Check the Fluxblade tab for more info.</p>
+                    <P>Honorbound ----- I am currently working on this game, and I have released multiple, small, showcase videos and a demo.
+                    Check the Honorbound tab for more info.</P>
+                    <P>This website ----- I learned three.js/javacsript and finished this website in around 2 weeks.</P>
+                    <p>more will also be added</p>
+                </div>
+
+                <div class="box">
+                    <h1>Areas of Expertise</h1>
+                    <p>C • C# • C++ • Python • Blueprint/Scripts • Java • HTML • JSON • JS • OCAML • JDBC • MySQL • LaTeX • JavaScript</p>
+                    <p>Unreal Engine • Unity • Three.js • Android Studios • PhotoShop • Other |∞|</p>
+                </div>
+
+                <div class="box">
+                    <h1>Aspirations</h1>
+                    <p>I love making games and have been designing them on the side. Working on these projects makes me want to merge my passion and work.
+                    I hope that, by getting into the design | development industry, I can share my vision with others.</p>
+                    <p>I also make music and do graphic design, some of my work will be embedded in this website soon.</p>
+                </div>
+            </div>
+        </div>
+
     </body>
+
 </html>

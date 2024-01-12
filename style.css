@@ -1,25 +1,6 @@
 body {
     margin: 0;
     overflow: hidden;
-<<<<<<< HEAD
-    background-color:black;
-    font-family: 'Century Gothic', sans-serif;
-    background-image: url("/pictures/backgrounds/mountains.jpeg");
-}
-
-.box {
-    width: 70%;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: rgba(0,0,0,0.5);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.overlay-container {
-    position: fixed;
-=======
     min-height: 100vh;
     min-width: 100vw;
 }
@@ -30,71 +11,26 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     position: absolute;
->>>>>>> home
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-<<<<<<< HEAD
-    overflow: hidden;
-    z-index: -1;
-}
-
-.overlay-image-1 {
-    position: absolute;
-    top: -1000px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.5;
-    transform: translateX(-50%);
-    transition: transform 0.5s ease-out;
-}
-.overlay-image-2 {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.1;
-}
-
-.overlay-image-3 {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.9;
-}
-
-nav {
-    background-color: rgb(9, 0, 31);
-=======
     z-index: -1; /* Ensure the background is behind other content */
 }
 
 nav {
     background-color: rgba(9, 0, 31, 0.7); /* Adding some transparency to the nav background */
->>>>>>> home
     display: flex;
     justify-content: space-between;
     padding: 10px;
     font-family: 'Century Gothic', sans-serif;
-<<<<<<< HEAD
-=======
     z-index: 1; /* Ensure the nav is above the background */
->>>>>>> home
 }
 
 ul {
     list-style: none;
     margin: 0;
-<<<<<<< HEAD
-    margin-left:4%;
-=======
     margin-left: 4%;
->>>>>>> home
     padding: 0;
     display: flex;
     flex-direction: row;
@@ -114,82 +50,6 @@ a {
 
 a:hover {
     color: white;
-<<<<<<< HEAD
-}
-
-canvas {
-    position: fixed;
-    z-index: -10;
-}
-
-.scroller{
-    overflow-y: scroll;
-}
-
-header {
-    position: absolute;
-    color: #fff;
-    top:5%;
-    left: 50%;
-    transform: translate(-50%);
-    padding: 20px;
-    opacity: 0.8;
-}
-
-.headerimg-container {
-    display: flex;
-    justify-content: center;
-}
-
-.headerimg {
-    position: relative;
-    margin: 0 10px;
-    width: 300px;
-    height: 200px;
-    opacity: 90%;
-    color: black;
-}
-
-h2 {
-    margin: 0;
-    font-size: 50px;
-    color:black;
-}
-
-h1 {
-    margin: 0;
-    font-size: 36px;
-    color:#CBC3E3;
-}
-
-.content {
-    position: absolute;
-    display:none;
-    top:65%;
-    width: 100%;
-    font-size: 20px;
-    line-height: 1.5;
-    color: white;
-}
-
-.resume {
-    display: block;
-    padding: 12px 24px;
-    background-color: #151515;
-    color: white;
-    font-size: 15px;
-    font-weight: 700;
-    transform: translate(-50%,-50%);
-    text-transform: uppercase;
-    border: midnightblue;
-    border-radius: 5px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-    font-family: 'Century Gothic', sans-serif;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-}
-=======
 }
 
 .container {
@@ -238,4 +98,3 @@ h1 {
         width: 100%;
     }
 }
->>>>>>> home

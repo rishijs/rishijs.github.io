@@ -1,6 +1,7 @@
 body {
     margin: 0;
     overflow: hidden;
+<<<<<<< HEAD
     background-color:black;
     font-family: 'Century Gothic', sans-serif;
     background-image: url("/pictures/backgrounds/mountains.jpeg");
@@ -18,10 +19,23 @@ body {
 
 .overlay-container {
     position: fixed;
+=======
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.background-image {
+    background-image: url('Images/bg/mountains1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+>>>>>>> home
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+<<<<<<< HEAD
     overflow: hidden;
     z-index: -1;
 }
@@ -56,16 +70,31 @@ body {
 
 nav {
     background-color: rgb(9, 0, 31);
+=======
+    z-index: -1; /* Ensure the background is behind other content */
+}
+
+nav {
+    background-color: rgba(9, 0, 31, 0.7); /* Adding some transparency to the nav background */
+>>>>>>> home
     display: flex;
     justify-content: space-between;
     padding: 10px;
     font-family: 'Century Gothic', sans-serif;
+<<<<<<< HEAD
+=======
+    z-index: 1; /* Ensure the nav is above the background */
+>>>>>>> home
 }
 
 ul {
     list-style: none;
     margin: 0;
+<<<<<<< HEAD
     margin-left:4%;
+=======
+    margin-left: 4%;
+>>>>>>> home
     padding: 0;
     display: flex;
     flex-direction: row;
@@ -74,7 +103,6 @@ ul {
 li {
     margin: 0 5%;
 }
-
 
 a {
     color: aqua;
@@ -86,6 +114,7 @@ a {
 
 a:hover {
     color: white;
+<<<<<<< HEAD
 }
 
 canvas {
@@ -160,3 +189,53 @@ h1 {
     top: 50%;
     left: 50%;
 }
+=======
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.box {
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.7); /* Set the background color to black */
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white; /* Set text color to white */
+    font-family: 'Century Gothic';
+    transition: transform 0.3s ease-in-out;
+}
+
+.box:hover {
+    transform: scale(1.1); /* Apply a scale transformation on hover for a subtle zoom effect */
+}
+
+.intro h1 {
+    font-size: 36px;
+}
+
+.about h2,
+.updates h2 {
+    font-size: 24px;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.updates ul {
+    list-style: none;
+    padding: 0;
+}
+
+@media (max-width: 700px) {
+    .box {
+        width: 100%;
+    }
+}
+>>>>>>> home

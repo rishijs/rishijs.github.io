@@ -1,49 +1,269 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HOME | RJSD</title>
-    <link rel="icon" href="/pictures/Zenith.png">
-    <link rel="stylesheet" href="style.css">
-</head>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>RishiJS ThreeJet</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/pictures/Zenith.png">
+        <link href="https://fonts.cdnfonts.com/css/century-gothic" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+        
+    <div class="slideshow-container" id="helpers">
 
-<!--
-    Integration of tailwind plus one of: vue/svelte/react
-    the 3 selected will be the ones to learn eventually
--->
-<body>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="/Explore/index.html">Explore</a></li>
-            <li><a href="/Games/index.html">Games</a></li>
-            <li><a href="/MusicCompositions/index.html">Music</a></li>
-            <li><a href="/PersonalProjects/index.html">Projects</a></li>
-        </ul>
-    </nav>
-
-    <div class="background-image"></div>
+        <div class="mySlides fade">
+        <div class="numbertext">Crystals</div>
+        <img src="/pictures/helper1.png" style="width:100%">
+        <div class="text">Collect Crystals to Enhance Speed</div>
+        </div>
     
-    <div class="container">
-        <div class="box intro">
-            <h1>Welcome to RJSD</h1>
-            <p>Your source for creativity and innovation</p>
+        <div class="mySlides fade">
+        <div class="numbertext">Landing</div>
+        <img src="/pictures/helper2.png" style="width:100%">
+        <div class="text">Press S Key to Land</div>
+        </div>
+    
+        <div class="mySlides fade">
+        <div class="numbertext">Info</div>
+        <img src="/pictures/helper3.png" style="width:100%">
+        <div class="text">Land to Read More</div>
         </div>
 
-        <div class="box about">
-            <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet nunc vel ultrices luctus.</p>
+        <div class="mySlides fade">
+        <div class="numbertext">Movement</div>
+        <img src="/pictures/helper4.png" style="width:100%">
+        <div class="text">Use WASD to Move</div>
         </div>
 
-        <div class="box updates">
-            <h2>Latest Updates</h2>
-            <ul>
-                <li>Exciting new project underway!</li>
-                <li>Explore our latest game releases</li>
-                <li>New music compositions added</li>
-            </ul>
+        <div class="mySlides fade">
+        <div class="numbertext">More Controls</div>
+        <img src="/pictures/helper6.png" style="width:100%">
+        <div class="text">Esc to Restart, M to Play Music</div>
+        </div>
+
+        <div class="mySlides fade">
+        <div class="numbertext">Ready?</div>
+        <img src="/pictures/helper5.png" style="width:100%">
+        <div class="text">Press Spacebar to Take Off</div>
         </div>
     </div>
-</body>
+
+    <div class="errortxt" id="incompatible">WEBGL Error On Your Device</div>
+    <div class="countdown" id="count"">--</div>
+
+
+    <div style="text-align:center" id="indices">
+        <span class="slideBox" id="s1"></span>
+        <span class="slideBox" id="s2"></span>
+        <span class="slideBox" id="s3"></span>
+        <span class="slideBox" id="s4"></span>
+        <span class="slideBox" id="s5"></span>
+        <span class="slideBox" id="s6"></span>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+
+        showSlides();
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            slides[slideIndex-1].style.display = "block";
+            highlight(slideIndex);
+            setTimeout(showSlides, 2000);
+        }
+
+        function highlight(n) {
+            switch(n){
+                case 1:
+                    document.getElementById("s1").style.backgroundColor="#191970";
+                    document.getElementById("s2").style.backgroundColor="#151515";
+                    document.getElementById("s3").style.backgroundColor="#151515";
+                    document.getElementById("s4").style.backgroundColor="#151515";
+                    document.getElementById("s5").style.backgroundColor="#151515";
+                    document.getElementById("s6").style.backgroundColor="#151515";
+                    break;
+                case 2:
+                    document.getElementById("s2").style.backgroundColor="#191970";
+                    document.getElementById("s1").style.backgroundColor="#151515";
+                    document.getElementById("s3").style.backgroundColor="#151515";
+                    document.getElementById("s4").style.backgroundColor="#151515";
+                    document.getElementById("s5").style.backgroundColor="#151515";
+                    document.getElementById("s6").style.backgroundColor="#151515";
+                    break;
+                case 3:
+                    document.getElementById("s3").style.backgroundColor="#191970";
+                    document.getElementById("s2").style.backgroundColor="#151515";
+                    document.getElementById("s1").style.backgroundColor="#151515";
+                    document.getElementById("s4").style.backgroundColor="#151515";
+                    document.getElementById("s5").style.backgroundColor="#151515";
+                    document.getElementById("s6").style.backgroundColor="#151515";
+                    break;
+                case 4:
+                    document.getElementById("s4").style.backgroundColor="#191970";
+                    document.getElementById("s2").style.backgroundColor="#151515";
+                    document.getElementById("s3").style.backgroundColor="#151515";
+                    document.getElementById("s1").style.backgroundColor="#151515";
+                    document.getElementById("s5").style.backgroundColor="#151515";
+                    document.getElementById("s6").style.backgroundColor="#151515";
+                    break;
+                case 5:
+                    document.getElementById("s5").style.backgroundColor="#191970";
+                    document.getElementById("s2").style.backgroundColor="#151515";
+                    document.getElementById("s3").style.backgroundColor="#151515";
+                    document.getElementById("s4").style.backgroundColor="#151515";
+                    document.getElementById("s1").style.backgroundColor="#151515";
+                    document.getElementById("s6").style.backgroundColor="#151515";
+                    break;  
+                case 6:
+                    document.getElementById("s5").style.backgroundColor="#151515";
+                    document.getElementById("s2").style.backgroundColor="#151515";
+                    document.getElementById("s3").style.backgroundColor="#151515";
+                    document.getElementById("s4").style.backgroundColor="#151515";
+                    document.getElementById("s1").style.backgroundColor="#151515";
+                    document.getElementById("s6").style.backgroundColor="#191970";
+                    break;  
+            }  
+        }
+    </script>
+
+    <div class="overlay" id="overlayID">Window Too Small, Will Redirect Soon</div>
+
+    <div class="loadingbar" id="loading">
+        <div class="loading-bar" id="ProgressBar"></div>
+        <div class="loading-bar-progress" id="ProgressBarProgress"></div>
+    </div>
+
+    <body type="module">
+        
+        <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/7/Stats.min.js" 
+        integrity="sha512-ey3wf3z1WUgQ6/XU/lV1UVQkbCpWsyQANkBst88XXWHok9fXKp55G365lLhScYihGpkzhiZz75r+8isUSCKRIg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script type="importmap">
+            {
+            "imports": {
+                "three": "https://unpkg.com/three@0.135.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.135.0/examples/jsm/"
+            }
+            }
+        </script>
+
+        <div class="collected" id="rightText">
+        </div>
+     
+        <div id="intro"></div>
+        <div id="mutedText"></div>
+
+        <div class="mapM" id="mapM">
+            <div class="currentsquare" id="c1" style='display: none'>1</div>
+            <div class="emptysquare" id="m1" style='display: none'>1</div>
+            <div class="currentsquare" id="c2" style='display: none'>2</div>
+            <div class="emptysquare" id="m2" style='display: none'>2</div>
+            <div class="currentsquare" id="c3" style='display: none'>3</div>
+            <div class="emptysquare" id="m3" style='display: none'>3</div>
+            <div class="currentsquare" id="c4" style='display: none'>4</div>
+            <div class="emptysquare" id="m4" style='display: none'>4</div>
+        </div>
+
+        <div class="mapL" id="mapL">
+            <div class="currentsquareL" id="lc1" style='display: none'>Origin | Start</div>
+            <div class="emptysquareL" id="lm1" style='display: none'>Origin | Start</div>
+            <div class="currentsquareL" id="lc2" style='display: none'>Main | First Middle</div>
+            <div class="emptysquareL" id="lm2" style='display: none'>Main | First Middle</div>
+            <div class="currentsquareL" id="lc3" style='display: none'>Coursework | Right</div>
+            <div class="emptysquareL" id="lm3" style='display: none'>Coursework | Right</div>
+            <div class="currentsquareL" id="lc4" style='display: none'>Contact Info | Left</div>
+            <div class="emptysquareL" id="lm4" style='display: none'>Contact Info | Left</div>
+            <div class="currentsquareL" id="lc5" style='display: none'>Summary | Last Middle</div>
+            <div class="emptysquareL" id="lm5" style='display: none'>Summary | Last Middle</div>
+        </div>
+
+        <div class="gauge" id="ms">
+        </div>
+
+        <button class="skipb" id="skipper">READY</button>
+
+        <div class="landing" id="stop">S</div>
+        <button class="landb1" id="infob1"></button>
+        <p class="landp1" id="infop1"></p>
+        <button class="landb2" id="infob2"></button>
+        <p class="landp2" id="infop2"></p>
+        <button class="landb3" id="infob3"></button>
+        <p class="landp3" id="infop3"></p>
+
+        <script type="module">
+            import {skipTutorial} from "./interface.js";
+            import {setCountdownZero} from "./app.js";
+
+            var countdown = 10;
+            if(countdown>0){
+                document.getElementById("count").textContent = countdown+'';
+                let intervalId = setInterval(function(){
+                    if (countdown > 0) {
+                        document.getElementById("count").textContent = countdown + '';
+                        countdown -= 1;
+                    } else {
+                        clearInterval(intervalId);
+                    }
+                },1000)
+            }
+
+            let skipb = document.getElementById("skipper");
+
+            skipb.addEventListener("click", function() {
+                countdown = 1;
+                skipTutorial();
+                setCountdownZero();
+
+            });
+
+            let b1 = document.getElementById("infob1");
+            let p1 = document.getElementById("infop1");
+
+            b1.addEventListener("click", function() {
+                if(p1.style.display == 'block'){
+                    p1.style.display = 'none';
+                }
+                else{
+                    p1.style.display = 'block';
+                }
+            });
+
+            let b2 = document.getElementById("infob2");
+            let p2 = document.getElementById("infop2");
+
+            b2.addEventListener("click", function() {
+                if(p2.style.display == "block"){
+                    p2.style.display = "none";
+                }
+                else{
+                    p2.style.display = "block";
+                }
+            });
+
+            let b3 = document.getElementById("infob3");
+            let p3 = document.getElementById("infop3");
+
+            b3.addEventListener("click", function() {
+                if(p3.style.display == "block"){
+                    p3.style.display = "none";
+                }
+                else{
+                    p3.style.display = "block";
+                }
+            });
+
+        </script>
+
+        <script type="module" src="app.js"></script>
+
+    </body>
 </html>

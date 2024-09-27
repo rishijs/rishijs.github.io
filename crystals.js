@@ -8,7 +8,7 @@ import {setPos0,setPos1,setPos2,setPos3,updatePos0,updatePos1,updatePos2,updateP
 export var crystalsCollected = 0;
 var crystralScale = 40;
 var crystal1,crystal2,crystal3,crystal4,crystal5,crystal6,crystal7,crystal8,crystal9,crystal10;
-var crytalSize = 40;
+var crytalSize = 100;
 
 export function spawnCrystals(){
 

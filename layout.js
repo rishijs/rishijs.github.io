@@ -68,27 +68,31 @@ export function renderLayout(){
         //updateSky()
         //Sky variance
         
-        if(worldsTraversed<3){
-            switch (world){
-                case 0:      
-                    skyUniforms[ 'turbidity' ].value = 10;
-                    skyUniforms[ 'rayleigh' ].value = 0;
-                    skyUniforms[ 'mieCoefficient' ].value = 0.001;
-                    skyUniforms[ 'mieDirectionalG' ].value = 0.8;
-                break;
-            case 1:
-                    skyUniforms[ 'turbidity' ].value = 10;
-                    skyUniforms[ 'rayleigh' ].value = 2;
-                    skyUniforms[ 'mieCoefficient' ].value = 0.001;
-                    skyUniforms[ 'mieDirectionalG' ].value = 0.8;
-                break;
-            case 2:
-                    skyUniforms[ 'turbidity' ].value = 10;
-                    skyUniforms[ 'rayleigh' ].value = 4;
-                    skyUniforms[ 'mieCoefficient' ].value = 0.001;
-                    skyUniforms[ 'mieDirectionalG' ].value = 0.8;
-                break;
-            }
+        switch (world){
+            case 0:      
+                skyUniforms[ 'turbidity' ].value = 10;
+                skyUniforms[ 'rayleigh' ].value = 0;
+                skyUniforms[ 'mieCoefficient' ].value = 0.001;
+                skyUniforms[ 'mieDirectionalG' ].value = 0.8;
+            break;
+        case 1:
+                skyUniforms[ 'turbidity' ].value = 10;
+                skyUniforms[ 'rayleigh' ].value = 2;
+                skyUniforms[ 'mieCoefficient' ].value = 0.001;
+                skyUniforms[ 'mieDirectionalG' ].value = 0.8;
+            break;
+        case 2:
+                skyUniforms[ 'turbidity' ].value = 10;
+                skyUniforms[ 'rayleigh' ].value = 4;
+                skyUniforms[ 'mieCoefficient' ].value = 0.001;
+                skyUniforms[ 'mieDirectionalG' ].value = 0.8;
+            break;
+        case 3:
+                skyUniforms[ 'turbidity' ].value = 10;
+                skyUniforms[ 'rayleigh' ].value = 8;
+                skyUniforms[ 'mieCoefficient' ].value = 0.001;
+                skyUniforms[ 'mieDirectionalG' ].value = 0.8;
+            break;
         }
 
         /*
